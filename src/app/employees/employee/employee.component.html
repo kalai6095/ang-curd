@@ -1,0 +1,29 @@
+<form action="" (submit)="onSubmit(form)" #form="ngForm" autocomplete="off">
+
+  <div class="form-group">
+    <label for="fullname">Full Name</label>
+    <input type="text" name="fullname" required="required" #fullname="ngModel" [(ngModel)]="empService.formData.fullname"
+           class="form-control"/>
+    <div class="validation-error" *ngIf="fullname.invalid && fullname.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="empService.formData.lastname"
+           class="form-control"/>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="position">Position</label>
+      <input type="text" name="position" #position="ngModel" [(ngModel)]="empService.formData.position"
+             class="form-control"/>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="mobile">Mobile No.</label>
+      <input type="text" name="mobile" #mobile="ngModel" [(ngModel)]="empService.formData.mobile" class="form-control"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="submit" [disabled]="form.invalid" class="btn btn-primary btn-block" value="Submit">
+  </div>
+
+</form>
