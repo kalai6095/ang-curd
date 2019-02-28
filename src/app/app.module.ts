@@ -9,19 +9,24 @@ import {EmployeeListComponent} from './employees/employee-list/employee-list.com
 import {EmployeeService} from './utils/employee.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {NullfilterPipe} from './utils/nullfilter.pipe';
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    NullfilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    HttpClientModule, ToastrModule.forRoot()
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

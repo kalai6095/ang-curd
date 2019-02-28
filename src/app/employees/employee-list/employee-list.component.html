@@ -1,3 +1,29 @@
-<p>
-  employee-list works!
-</p>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>SlNo.</th>
+      <th>EmpCode.</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Mobile</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let emp of employees;let count=index">
+      <td>{{count + 1}}</td>
+      <td>{{emp.empcode|nullfilter}}</td>
+      <td>{{emp.fullname |nullfilter}}</td>
+      <td>{{emp.position}}</td>
+      <td>{{emp.mobile}}</td>
+      <td>
+        <div class="btn-group">
+          <span (click)="updateEmployee(emp)" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></span>
+          <span (click)="deleteEmployee(emp.id)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></span>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
