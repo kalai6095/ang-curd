@@ -3,7 +3,7 @@ import {Employee} from './employee.model';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn : 'root'
 })
 export class EmployeeService {
 
@@ -15,12 +15,13 @@ export class EmployeeService {
   }
 
   postEmployee(formData: Employee) {
-    return this.http.post(`${this.rootUrl}employee`, formData);
+    return this.http.post(`${this.rootUrl}employee` , formData);
   }
 
-  getEmployeeList(){
+  getEmployeeList() {
     return this.http.get(`${this.rootUrl}employees`);
   }
+
   getEmployees() {
     return this.http.get(`${this.rootUrl}employees`).toPromise().then(
       res => this.emplist = res as Employee[]);
@@ -32,7 +33,7 @@ export class EmployeeService {
   }
 
   updateEmployee(formData: Employee) {
-    alert()
-    return this.http.put(`${this.rootUrl}employee`, formData);
+    alert();
+    return this.http.put(`${this.rootUrl}employee` , formData);
   }
 }
